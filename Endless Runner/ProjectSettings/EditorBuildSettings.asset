@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Information.unity
     guid: 5c0e10896a0e927498220c09e53459c3
+  - enabled: 1
+    path: Assets/Scenes/DesertRunner.unity
+    guid: dd653fbbdb70efb4182081190fb29837
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 289c1b55c9541489481df5cc06664110, type: 3}
   m_UseUCBPForAssetBundles: 0

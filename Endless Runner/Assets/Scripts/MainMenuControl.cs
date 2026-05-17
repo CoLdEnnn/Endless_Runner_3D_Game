@@ -19,6 +19,7 @@ public class MainMenuControl : MonoBehaviour
     void Start()
     {
         StartCoroutine(FadeInTurnOff());
+
         if (hasClicked == true)
         {
             staticCam.SetActive(true);
@@ -39,36 +40,52 @@ public class MainMenuControl : MonoBehaviour
         StartCoroutine(AnimCam());
     }
 
-
     public void StartGame()
     {
         StartCoroutine(StartButton());
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     IEnumerator StartButton()
     {
         buttonSelect.Play();
+
         fadeOut.SetActive(true);
+
         yield return new WaitForSeconds(1);
+
         SceneManager.LoadScene(2);
     }
 
     IEnumerator AnimCam()
     {
         animCam.GetComponent<Animator>().Play("AnimMenuCam");
+
         bounceText.SetActive(false);
+
         bigButton.SetActive(false);
+
         yield return new WaitForSeconds(1.5f);
+
         fadeIn.SetActive(false);
+
         mainCam.SetActive(true);
+
         animCam.SetActive(false);
+
         menuControls.SetActive(true);
+
         hasClicked = true;
     }
 
     IEnumerator FadeInTurnOff()
     {
         yield return new WaitForSeconds(1);
+
         fadeIn.SetActive(false);
     }
 }
